@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Form from "./Form";
+import Form from "./Form.js";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -10,6 +10,8 @@ function App() {
   });
 
   let formDataArr = JSON.parse(localStorage.getItem("formDataArr")) || [];
+
+  // Add the formData in the formData Array in local storage and rest the form
   function handleSubmitForm(event) {
     event.preventDefault();
     localStorage.setItem(

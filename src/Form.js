@@ -1,4 +1,5 @@
 export default function Form({ formData, setFormData, handleSubmitForm }) {
+  // Function to handle all the changes in the form inputs
   function handleChange(event) {
     const { name, value } = event.target;
     setFormData((prevFormData) => {
@@ -9,6 +10,7 @@ export default function Form({ formData, setFormData, handleSubmitForm }) {
     });
   }
 
+  //   Function to handle file uploads by converting them to Base64 code to save into local storage
   function handleFileChange(event) {
     const reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
@@ -22,6 +24,8 @@ export default function Form({ formData, setFormData, handleSubmitForm }) {
       });
     });
   }
+
+  //   For creating age Dropdown
   let ageArray = Array.from({ length: 100 });
 
   return (
@@ -64,7 +68,6 @@ export default function Form({ formData, setFormData, handleSubmitForm }) {
           id="fileUpload"
           onChange={handleFileChange}
           name="fileUpload"
-          // value={formData.fileUpload}
         />
       </div>
 
